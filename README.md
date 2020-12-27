@@ -4,7 +4,7 @@ Identify all users in the NY Metro area for Citibike partnership.
 - Identify what area the NY Metro area covers.
 - Define metholody for determing a users location.
   - IP address where an event occurred.
-- Which event/s to use?
+- Which event to use?
   - A user can have unlimited number of events.
-- Link event data to
+- Linking event data to the NY Metra area.
 # 3. The solution:
