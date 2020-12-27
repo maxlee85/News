@@ -15,3 +15,7 @@ Identify all users in the NY Metro area for Citibike partnership.
 - Build tables to calculate events per ip address per user.
   - user_event_ip_counts.sql
   - user_purchase_ip.sql
+- Determine which ip address to use per users as their location.
+  - signup_ip_majority.sql
+- Pull emails from users in NY Metro area.
+  - member_emails.sql
