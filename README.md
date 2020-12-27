@@ -1,4 +1,5 @@
-1. The challenge:\Identify all users in the NY Metro area for Citibike partnership.
+1. The challenge:\
+    Identify all users in the NY Metro area for Citibike partnership.
 2. The approach:\
   A. Identify what area the NY Metro area covers.\
   B. Define metholody for determing a users location. \
