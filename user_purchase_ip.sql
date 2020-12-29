@@ -1,4 +1,4 @@
--- This table determines the ip address when a member successfully purchases a membership.
+-- This table determines the ip address when a member successfully purchases a membership (trial or paid).
 
 use role etl;
 
