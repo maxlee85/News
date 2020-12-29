@@ -2,23 +2,13 @@
 -- 2. Download geoip2-csv-converter to convert the downloaded files from #1 https://github.com/maxmind/geoip2-csv-converter/releases
 -- 3. Run the converter from #2 to get the data with integer and string ranges using the IPv4 files:
 
--- from your local
+-- From local
 time ./geoip2-csv-converter \
 -block-file ../GeoIP2-City-CSV_20181009/GeoIP2-City-Blocks-IPv4.csv \
 -include-cidr \
 -include-integer-range  \
 -include-range  \
 -output-file ip_location.out.csv
-
-/*
--- not loaded, not sure if we need this yet:
-time ./geoip2-csv-converter \
--block-file ../GeoIP2-Country-CSV_20181009/GeoIP2-Country-Blocks-IPv4.csv \
--include-cidr \
--include-integer-range  \
--include-range  \
--output-file country_ip_location.out.csv
-*/
 
 -- 4. Load the city_ip_location and country_ip_location from output in #3
 -- a. create table ddl in snowflake
