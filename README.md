@@ -10,7 +10,8 @@ Identify all users in the NY Metro area for Citibike partnership.
 # 3. The solution:
 - Pull list of all NY Metro area zip codes.
   - NY_Metro_Area_Zipcodes.ipynb
-- Import IP range lookup.
+- Import NY zip codes
+- Import IP location lookup.
   - load_maxmind_geo_ip_manually.sql
 - Build tables to calculate events per ip address per user.
   - user_event_ip_counts.sql
