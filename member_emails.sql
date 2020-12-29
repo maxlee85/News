@@ -1,4 +1,6 @@
 -- this query grabs email from all current members from nyc metro area
+-- the default ip address to use is based off of purchase location, however segment does not capture all purchase events
+-- if the purchase event is not captured, the ip used is the one with the most captured events
 
 with user_list as (
         select distinct a.user_id
