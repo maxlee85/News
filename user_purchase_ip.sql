@@ -20,7 +20,7 @@ with purchase_sources as (
          on a.email = b.email
       where a.type = 'payment.PURCHASE_PLAN_SUCCESS'
         and a.path <> '/render2'
- union all
+  union all
      select coalesce(a.user_id, b.user_id)
           , a.timestamp
           , a.context_ip as ip
@@ -30,20 +30,20 @@ with purchase_sources as (
          on strip_quotes(parse_url(a.context_page_url, 1):parameters:userEmail) = b.email
       where a.step = 'confirmation'
         and a.user_id is null
- union all
-select user_id
-     , timestamp
-     , context_ip as ip
-     , parse_ip(context_ip, 'INET')['ipv4']::int as ipv4
-  from aaptiv_core.segment_ios.subscription_subscribe
- where status = 'success'
- union all
-select user_id
-     , timestamp
-     , context_ip as ip
-     , parse_ip(context_ip, 'INET')['ipv4']::int as ipv4
-  from aaptiv_core.segment_android.subscription_subscribe
- where status = 'success'
+  union all 
+     select user_id
+          , timestamp
+          , context_ip as ip
+          , parse_ip(context_ip, 'INET')['ipv4']::int as ipv4
+       from aaptiv_core.segment_ios.subscription_subscribe
+      where status = 'success'
+  union all
+     select user_id
+          , timestamp
+          , context_ip as ip
+          , parse_ip(context_ip, 'INET')['ipv4']::int as ipv4
+       from aaptiv_core.segment_android.subscription_subscribe
+      where status = 'success'
 )
 
     select distinct p.user_id
