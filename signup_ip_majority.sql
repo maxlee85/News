@@ -1,8 +1,8 @@
--- This query calculates if a users signup ip has the most associated events with that user
+-- This query calculates if a users signup ip has the most associated events with that user.
 -- SIGNUP_MAJORITY	NOT_SIGNUP_MAJORITY
 -- 615564	          180681
--- 77.3% users have the most # of events at the signup ip address
--- 9.1% of users have an unmapped zip
+-- 77.3% users have the most # of events at the signup ip address.
+-- 9.1% of users have an unmapped zip.
 
 with user_purchase_details as (
      select u.user_id
@@ -41,9 +41,8 @@ test as (
       , count(distinct(case when is_purchase_ip is null then user_id end)) as not_purchase_majority
       , count(distinct user_id) as all_users
  from test
- -- where event_postal_code = 'NULL' or purchase_postal_code = 'NULL'
 
- -- This query is similar to ^^ but calculates the users that have 50%+ of events with same ip as signup ip
+ -- This query is similar to ^^ but calculates the users that have 50%+ of events with same ip as signup ip.
 
 with user_signups as (
 select user_id
