@@ -11,6 +11,7 @@ Identify all users in the NY Metro area for Citibike partnership.
 - Pull list of all NY Metro area zip codes.
   - NY_Metro_Area_Zipcodes.ipynb
 - Import NY zip codes
+  - Copy from .csv
     - aaptiv_core.geo_ip.ny_metro_zipcodes
 - Import IP location lookup.
   - load_maxmind_geo_ip_manually.sql
