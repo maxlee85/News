@@ -1,4 +1,5 @@
--- This table calculates the number events that occurred per user per ip address.
+-- The user_event_ip_counts table calculates the number events that occurred per user per ip address.
+-- The _test table shows the ip address with the most events.
 
 use role etl;
 
