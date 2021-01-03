@@ -6,7 +6,7 @@ Identify all users in the NY Metro area for Citibike partnership.
   - IP address where an event occurred.
 - Determine which event to use.
   - A user can have unlimited number of events.
-- Linking event data to the NY Metra area.
+- Linking event data to the NY Metro area.
 # 3. The solution:
 - Pull list of all NY Metro area zip codes.
   - NY_Metro_Area_Zipcodes.ipynb
