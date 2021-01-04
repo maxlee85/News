@@ -8,6 +8,7 @@ Identify all users in the NY Metro area for Citibike partnership.
   - A user can have unlimited number of events.
 - Linking event data to the NY Metro area.
   - IP address to zip code.
+  - An ip address can be converted to an integer... ie 192.0.2.0 -> 3221225984.
 # 3. The solution:
 - Pull list of all NY Metro area zip codes.
   - NY_Metro_Area_Zipcodes.ipynb
