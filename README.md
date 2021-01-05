@@ -1,4 +1,4 @@
-# 1. The challenge: 
+# 1. The challenge (not a personal project): 
 Identify all users in the NY Metro area for Citibike partnership.
 # 2. The approach:
 - Identify what area the NY Metro area covers.
