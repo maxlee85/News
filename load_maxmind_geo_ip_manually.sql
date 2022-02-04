@@ -13,7 +13,7 @@ time ./geoip2-csv-converter \
 -- 4. Load the city_ip_location and country_ip_location from output in #3
 -- a. create table ddl in snowflake
 
-create table aaptiv_core.geo_ip.ip_location
+create table core.geo_ip.ip_location
 ( network                        varchar(16777216)
 , network_start_ip               varchar(16777216)
 , network_last_ip                varchar(16777216)
@@ -63,7 +63,7 @@ copy into ip_location file_format = (type = csv field_delimiter = ',' FIELD_OPTI
 +------------------------+--------+-------------+-------------+-------------+-------------+-------------+------------------+-----------------------+-------------------------+
 */
 
-select count(1) from AAPTIV_CORE.GEO_IP.IP_LOCATION;
+select count(1) from core.geo_ip.ip_location;
 /* output:
 +----------+
 | COUNT(1) |
