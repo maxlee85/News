@@ -10,8 +10,8 @@ with user_purchase_details as (
           , u.ipv4
           , i.postal_code
           , row_number() over (partition by u.user_id order by u.timestamp desc) as row_num
-       from etl.etl_core.user_purchase_ip u
- inner join aaptiv_core.geo_ip.ip_location i
+       from db.schema.user_purchase_ip u
+ inner join db.geo_ip.ip_location i
          on u.ipv4 between i.network_start_integer and i.network_last_integer
 ),
 
@@ -27,8 +27,8 @@ test as (
           , case when is_purchase_ip then a.num_events end as purchase_ip_events
           , case when i.postal_code = b.postal_code then true end as is_same_as_purchase_zip
           , sum(a.num_events) over (partition by a.user_id) as all_events
-       from etl.etl_core.user_event_ip_counts_test a
- inner join aaptiv_core.geo_ip.ip_location i
+       from db.schema.user_event_ip_counts_test a
+ inner join db.geo_ip.ip_location i
          on a.ipv4 between i.network_start_integer and i.network_last_integer
  inner join user_purchase_details b
          on a.user_id = b.user_id
@@ -49,7 +49,7 @@ select user_id
      , ip
      , ipv4
      , row_number() over (partition by user_id order by timestamp desc) as row_num
-  from etl.etl_core.user_signup_ip
+  from db.schema.user_signup_ip
 ),
 
 test as (
@@ -60,7 +60,7 @@ test as (
           , case when a.ip = b.ip then true end as is_signup_ip
           , case when is_signup_ip then a.num_events end as signup_ip_events
           , sum(a.num_events) over (partition by a.user_id) as all_events
-       from etl.etl_core.user_event_ip_counts a
+       from db.schema.user_event_ip_counts a
  inner join user_signups b
          on a.user_id = b.user_id
         and b.row_num = 1
