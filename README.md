@@ -14,10 +14,10 @@ Identify all users in the NY Metro area for Citibike partnership.
   - NY_Metro_Area_Zipcodes.ipynb
 - Import NY zip codes
   - Copy from .csv created via NY_Metro_Area_Zipcodes.ipynb
-    - aaptiv_core.geo_ip.ny_metro_zipcodes
+    - db.geo_ip.ny_metro_zipcodes
 - Import IP location lookup.
   - load_maxmind_geo_ip_manually.sql
-    - aaptiv_core.geo_ip.ip_location
+    - db.geo_ip.ip_location
 - Build tables to calculate events per ip address per user.
   - user_event_ip_counts.sql
   - user_purchase_ip.sql
